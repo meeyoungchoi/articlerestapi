@@ -5,7 +5,7 @@
     <p>articles/new.mustache</p>
 </div>
 
-<form class="container">
+<form class="container" method="post" action="/articles">
     <div class="form-group">
         <label for="title">제목</label>
         <input type="text" class="form-control" id="article-title" name="title" placeholder="제목을 입력하세요">
@@ -13,7 +13,7 @@
 
     <div class="form-group">
         <label for="content">내용</label>
-        <textarea class="form-control" id="article-content" placeholder="내용을 입력하세요" rows="3"></textarea>
+        <textarea class="form-control" id="article-content" name="content" placeholder="내용을 입력하세요" rows="3"></textarea>
     </div>
 
     <button type="submit" class="btn btn-primary">제출</button>
