@@ -1,35 +1,25 @@
 package com.example.articlerestapi.dto;
 
+
+import com.example.articlerestapi.entity.Article;
+import lombok.Data;
+
+@Data
 public class ArticleForm {
+
     private String title;
     private String content;
 
-    public ArticleForm(String title, String content) {
-        this.title = title;
-        this.content = content;
+    //빌더 패턴으로 객체를 생성하겠다 
+    //생성자의 변형형태
+    public Article toEntity() {
+        return Article.builder()
+                      .id(null)
+                      .title(title)
+                      .content(content)
+                      .build();
     }
 
-    public String getTitle() {
-        return title;
-    }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    @Override
-    public String toString() {
-        return "ArticleForm{" +
-                "title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                '}';
-    }
 }
